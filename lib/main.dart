@@ -10,7 +10,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-    final routeObserver = Get.put<RouteOberser>(RouteObserver<PageRoute>());
+    final routeObserver = Get.put<RouteObserver>(RouteObserver<PageRoute>());
 
     return GetMaterialApp(
       title: 'Booking Developers',
