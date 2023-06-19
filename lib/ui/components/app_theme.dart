@@ -27,5 +27,16 @@ ThemeData makeAppTheme() {
       textTheme: ButtonTextTheme.primary,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)));
 
-  return ThemeData();
+  return ThemeData(
+      primaryColor: primaryColor,
+      primaryColorDark: primaryColorDark,
+      primaryColorLight: primaryColorLight,
+      highlightColor: secondaryColor,
+      secondaryHeaderColor: secondaryClorDark,
+      disabledColor: disabledColor,
+      dividerColor: dividerColor,
+      colorScheme: ColorScheme.light(primary: primaryColor),
+      backgroundColor: Colors.white,
+      inputDecorationTheme: inputDecorationTheme,
+      buttonTheme: buttonTheme);
 }
