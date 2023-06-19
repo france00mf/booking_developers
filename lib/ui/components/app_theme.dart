@@ -8,7 +8,9 @@ ThemeData makeAppTheme() {
   final secondaryClorDark = Color.fromRGBO(0, 37, 26, 1);
   final disabledColor = Colors.grey[400];
   final dividerColor = Colors.grey;
-  final textTheme = TextTheme();
+  final textTheme = TextTheme(
+      headline1: TextStyle(
+          fontSize: 30, fontWeight: FontWeight.bold, color: primaryColorDark));
   final inputDecorationTheme = InputDecorationTheme();
   final buttonTheme = ButtonThemeData();
 
