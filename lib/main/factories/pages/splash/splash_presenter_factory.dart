@@ -1,0 +1,1 @@
+SplashPresenter makeGetSplashPresenter() => GetxSplashPresenter();
