@@ -11,7 +11,12 @@ ThemeData makeAppTheme() {
   final textTheme = TextTheme(
       headline1: TextStyle(
           fontSize: 30, fontWeight: FontWeight.bold, color: primaryColorDark));
-  final inputDecorationTheme = InputDecorationTheme();
+  final inputDecorationTheme = InputDecorationTheme(
+      enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: primaryColorLight)),
+      focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: primaryColorLight)),
+      alignLabelWithHint: true);
   final buttonTheme = ButtonThemeData();
 
   return ThemeData();
