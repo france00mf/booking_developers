@@ -20,7 +20,9 @@ class App extends StatelessWidget {
       theme: makeAppTheme(),
       navigatorObservers: [routeObserver],
       initialRoute: '/',
-      getPages: [],
+      getPages: [
+        GetPage(name: '/', page: makeSplashPage, transition: Transition.fadeIn)
+      ],
     );
   }
 }
