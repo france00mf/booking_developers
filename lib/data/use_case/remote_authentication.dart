@@ -1,8 +1,11 @@
 import 'package:booking_developers/data/http/http_client.dart';
 import 'package:booking_developers/data/http/http_error.dart';
+import 'package:booking_developers/data/models/remote_account_model.dart';
 import 'package:booking_developers/domain/entity/account_entity.dart';
 import 'package:booking_developers/domain/use_case/authentication.dart';
 import 'package:meta/meta.dart';
+
+import '../../domain/helpers/domain_error.dart';
 
 class RemoteAuthentication implements Authentication {
   final HttpClient? httpClient;
@@ -15,6 +18,7 @@ class RemoteAuthentication implements Authentication {
     try {
       final httpResponse =
           await httpClient!.request(url: url!, method: 'post', body: body);
+      return RemoteAccountModel.fromJson(httpResponse).toEntity();
     } on HttpError catch (error) {
       throw error == HttpError.unauthorized
           ? DomainError.invalidCredentials
