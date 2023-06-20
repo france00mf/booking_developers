@@ -10,6 +10,11 @@ void main() {
   String url;
   AuthenticatinParams params;
 
+  PostExpectation mockRequest() => when(httpClient.request(
+      url: anyNamed("url"),
+      method: anyNamed("method"),
+      body: anyNamed("body")));
+
   setUp(() {
     sut = RemoteAuthenticationParams();
     httpClient = HttpClientSpy();
