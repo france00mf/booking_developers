@@ -2,7 +2,7 @@ import 'package:booking_developers/domain/entity/account_entity.dart';
 import 'package:meta/meta.dart';
 
 abstract class Authentication {
-  Future<AccountEntity> auth();
+  Future<AccountEntity> auth(AuthenticationParams params);
 }
 
 class AuthenticationParams {
