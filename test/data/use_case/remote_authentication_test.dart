@@ -13,6 +13,8 @@ void main() {
   String url;
   AuthenticationParams params;
 
+  Map mockValidData() => {'accessToken': faker.guid.guid()};
+
   PostExpectation mockRequest() => when(httpClient.request(
       url: anyNamed("url"),
       method: anyNamed("method"),
