@@ -45,4 +45,8 @@ void main() {
         method: 'post',
         body: {'email': params!.email, 'password': params!.secrect}));
   });
+
+  test('Should throw UnexpectedError if HttpClient returns 400', () async {});
+
+  test('Should throw UnexpectedError if HttpClient returns 404', () async {});
 }
