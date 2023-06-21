@@ -1,5 +1,6 @@
 import 'package:booking_developers/data/http/http.dart';
 import 'package:booking_developers/data/use_case/remote_authentication.dart';
+import 'package:booking_developers/domain/helpers/domain_error.dart';
 import 'package:booking_developers/domain/use_case/authentication.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -46,7 +47,12 @@ void main() {
         body: {'email': params!.email, 'password': params!.secrect}));
   });
 
-  test('Should throw UnexpectedError if HttpClient returns 400', () async {});
+  test('Should throw UnexpectedError if HttpClient returns 400', () async {
+    mockHttpError(HttpError.badRequest);
+    final future = sut!.auth(params!);
+
+    expect(future, throwsA(DomainError.unexpected));
+  });
 
   test('Should throw UnexpectedError if HttpClient returns 404', () async {});
 }
