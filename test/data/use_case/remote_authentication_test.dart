@@ -9,13 +9,13 @@ class HttpClientSpy extends Mock implements HttpClient {}
 
 void main() {
   RemoteAuthentication sut;
-  HttpClientSpy httpClient;
-  String url;
+  HttpClientSpy? httpClient;
+  String? url;
   AuthenticationParams params;
 
   Map mockValidData() => {'accessToken': faker.guid.guid()};
 
-  PostExpectation mockRequest() => when(httpClient.request(
+  PostExpectation mockRequest() => when(httpClient?.request(
       url: anyNamed("url"),
       method: anyNamed("method"),
       body: anyNamed("body")));
@@ -29,7 +29,7 @@ void main() {
   }
 
   setUp(() {
-    sut = RemoteAuthenticationParams();
+    sut = RemoteAuthentication(httpClient: httpClient, url: url);
     httpClient = HttpClientSpy();
     params = AuthenticationParams(
         email: faker.internet.email(), secrect: faker.internet.password());
