@@ -37,5 +37,5 @@ void main() {
     mockHttpData(mockValidData());
   });
 
-  test('', () {});
+  test('Should call HttpClient with correct values', () async {});
 }
