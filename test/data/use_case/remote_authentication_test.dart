@@ -34,6 +34,7 @@ void main() {
     params = AuthenticationParams(
         email: faker.internet.email(), secrect: faker.internet.password());
     url = faker.internet.httpUrl();
+    mockHttpData(mockValidData());
   });
 
   test('', () {});
