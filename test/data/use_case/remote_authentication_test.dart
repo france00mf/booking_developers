@@ -20,6 +20,10 @@ void main() {
       method: anyNamed("method"),
       body: anyNamed("body")));
 
+  void mockHttpData(Map data) {
+    mockRequest().thenAnswer((_) async => data);
+  }
+
   setUp(() {
     sut = RemoteAuthenticationParams();
     httpClient = HttpClientSpy();
