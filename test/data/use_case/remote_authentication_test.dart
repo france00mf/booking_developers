@@ -8,10 +8,10 @@ import 'package:mockito/mockito.dart';
 class HttpClientSpy extends Mock implements HttpClient {}
 
 void main() {
-  RemoteAuthentication sut;
+  RemoteAuthentication? sut;
   HttpClientSpy? httpClient;
   String? url;
-  AuthenticationParams params;
+  AuthenticationParams? params;
 
   Map mockValidData() => {'accessToken': faker.guid.guid()};
 
@@ -37,5 +37,7 @@ void main() {
     mockHttpData(mockValidData());
   });
 
-  test('Should call HttpClient with correct values', () async {});
+  test('Should call HttpClient with correct values', () async {
+    await sut!.auth(params!);
+  });
 }
