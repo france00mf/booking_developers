@@ -24,6 +24,10 @@ void main() {
     mockRequest().thenAnswer((_) async => data);
   }
 
+  void mockHttpError(HttpError error) {
+    mockRequest().thenThrow(error);
+  }
+
   setUp(() {
     sut = RemoteAuthenticationParams();
     httpClient = HttpClientSpy();
