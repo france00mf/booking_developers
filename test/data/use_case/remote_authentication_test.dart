@@ -39,5 +39,10 @@ void main() {
 
   test('Should call HttpClient with correct values', () async {
     await sut!.auth(params!);
+
+    verify(httpClient!.request(
+        url: url!,
+        method: 'post',
+        body: {'email': params!.email, 'password': params!.secrect}));
   });
 }
