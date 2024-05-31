@@ -1,3 +1,3 @@
 import 'package:flutter/cupertino.dart';
 
-Widget makeSplashPage() => SplashPage();
+// Widget makeSplashPage() => SplashPage();

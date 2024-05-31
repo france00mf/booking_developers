@@ -1,6 +1,11 @@
 
 
+import 'package:flutter/material.dart';
+
+import '../../domain/domain.dart';
 import '../../domain/helpers/domain_error.dart';
+import '../http/http.dart';
+import '../models/models.dart';
 
 class RemoteAuthentication implements Authentication {
   final HttpClient? httpClient;

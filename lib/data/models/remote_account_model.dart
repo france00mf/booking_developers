@@ -1,5 +1,6 @@
 
 
+import '../../domain/entity/entity.dart';
 import '../http/http_error.dart';
 
 class RemoteAccountModel {

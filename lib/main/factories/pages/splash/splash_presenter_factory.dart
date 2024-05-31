@@ -1,1 +1,1 @@
-SplashPresenter makeGetSplashPresenter() => GetxSplashPresenter();
+// SplashPresenter makeGetSplashPresenter() => GetxSplashPresenter();
